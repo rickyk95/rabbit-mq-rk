@@ -1,6 +1,6 @@
 const express = require('express')
 const amqp = require('amqplib')
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 const amqpLink = process.env.CLOUDAMQP_URL || 'amqp://localhost:5672';
 

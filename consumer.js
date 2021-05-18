@@ -1,6 +1,6 @@
 const amqp = require('amqplib')
 
-const amqpLink = 'amqp://localhost:5672' || process.env.CLOUDAMQP_URL;
+const amqpLink = process.env.CLOUDAMQP_URL || 'amqp://localhost:5672';
 
 let connection, channel, q;
 

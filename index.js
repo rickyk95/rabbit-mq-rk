@@ -1,7 +1,7 @@
 const express = require('express')
 const amqp = require('amqplib')
 
-const amqpLink = 'amqp://localhost:5672' || process.env.AMQPURL
+const amqpLink = 'amqp://localhost:5672' || process.env.CLOUDAMQP_URL;
 
 const app = express()
 

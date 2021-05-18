@@ -1,13 +1,15 @@
 const express = require('express')
 const amqp = require('amqplib')
 
+const amqpLink = 'amqp://localhost:5672' || process.env.AMQPURL
+
 const app = express()
 
 let connection, channel, q;
 
 async function connect() {
 
-	 connection = await amqp.connect('amqp://localhost:5672')
+	 connection = await amqp.connect(amqpLink)
 
 	 channel = await connection.createChannel()
 

@@ -1,10 +1,12 @@
 const amqp = require('amqplib')
 
+const amqpLink = 'amqp://localhost:5672' || process.env.AMQPURL;
+
 let connection, channel, q;
 
 async function connect() {
 
-	 connection = await amqp.connect('amqp://localhost:5672')
+	 connection = await amqp.connect(amqpLink)
 
 	 channel = await connection.createChannel()
 
